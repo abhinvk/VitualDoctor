@@ -138,7 +138,7 @@ th {
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Doctor name</th>
                         <th>Date</th>
                         <th >Image</th>
@@ -147,7 +147,7 @@ th {
                 <tbody>
                     {% for prescription in prescriptions %}
                         <tr>
-                            <td>{{ prescription.id }}</td>
+                            <!-- <td>{{ prescription.id }}</td> -->
                             <td>{{ prescription.doctor_name }}</td>
                             <td>{{ prescription.date }}</td>
                             <td><img class="prescription-image" src="data:image/jpeg;base64,{{ prescription.image_data }}" alt="Prescription"></td>
