@@ -34,9 +34,7 @@ app.config['MYSQL_SSL_MODE'] = 'REQUIRED'
 mysql = MySQL(app)
 
 
-@app.route("/", methods=["POST", "GET"])
-def login():
-    return render_template('login.html')
+
 
 
 @app.route("/register", methods=["POST", "GET"])
@@ -48,7 +46,7 @@ def resister():
         pwd = request.form['pwd']
         # hashed_pwd = bcrypt.hashpw(pwd.encode('utf-8'), bcrypt.gensalt())
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        sql = 'insert into patient (name,mail,pwd) values(%s,%s)'
+        sql = 'insert into patient (name,mail,pwd) values(%s,%s,%s)'
         values = (name, mail, pwd)
         cursor.execute(sql, values)
         mysql.connection.commit()
