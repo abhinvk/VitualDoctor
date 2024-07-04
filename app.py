@@ -48,7 +48,7 @@ def resister():
         pwd = request.form['pwd']
         # hashed_pwd = bcrypt.hashpw(pwd.encode('utf-8'), bcrypt.gensalt())
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        sql = 'insert into patient (name,mail,pwd) values(%s,%s,%s)'
+        sql = 'insert into patient (name,mail,pwd) values(%s,%s)'
         values = (name, mail, pwd)
         cursor.execute(sql, values)
         mysql.connection.commit()
