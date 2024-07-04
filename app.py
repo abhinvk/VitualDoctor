@@ -36,7 +36,9 @@ mysql = MySQL(app)
 
 
 
-
+@app.route("/", methods=["POST", "GET"])
+def login():
+    return render_template('login.html')
 @app.route("/register", methods=["POST", "GET"])
 def resister():
     msg = ''
