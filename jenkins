@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 bat '''
-                python app.py
+                
                 '''
             }
         }
@@ -25,6 +25,7 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 bat '''
+                python app.py
                 echo "doing delivery stuff.."
                 '''
             }
